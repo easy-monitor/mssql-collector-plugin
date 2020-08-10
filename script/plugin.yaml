@@ -1,0 +1,16 @@
+agentType: prometheus
+type: exporter
+
+name: mssql_collector_plugin
+version: 1.0.0
+
+category: 数据库
+
+params:
+    - mssql_server
+    - mssql_port
+    - mssql_username
+    - mssql_password
+    - mssql_conn_encrypt
+    - exporter_host
+    - exporter_port

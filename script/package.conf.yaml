@@ -1,0 +1,75 @@
+---
+proc_list: []
+port_list: []
+proc_guard: ""
+port_guard: ""
+start_script: "#!/bin/bash\n\nif ! type getopt >/dev/null 2>&1 ; then\n  echo \"Error:
+  command \\\"getopt\\\" is not found\" >&2\n  exit 1\nfi\n\ngetopt_cmd=`getopt -o
+  h -a -l help,mssql-host:,mssql-port:,mssql-user:,mssql-password:,mssql-conn-encrypt:,exporter-host:,exporter-port:
+  -n \"start.sh\" -- \"$@\"`\nif [ $? -ne 0 ] ; then\n    exit 1\nfi\neval set --
+  \"$getopt_cmd\"\n\nmssql_host=\"127.0.0.1\"\nmssql_port=1433\nmssql_user=\"\"\nmssql_password=\"\"\nmssql_conn_encrypt=\"false\"\nexporter_host=\"127.0.0.1\"\nexporter_port=4000\n\nprint_help()
+  {\n    echo \"Usage:\"\n    echo \"    start_script.sh [options]\"\n    echo \"
+  \   start_script.sh --mssql-host 127.0.0.1 --mssql-port 1433 --mssql-user root [options]\"\n
+  \   echo \"\"\n    echo \"Options:\"\n    echo \"  -h, --help                 show
+  help\"\n    echo \"      --mssql-host           the address of mssql server (\\\"127.0.0.1\\\"
+  by default)\"\n    echo \"      --mssql-port           the port of mssql server
+  (1433 by default)\"\n    echo \"      --mssql-user           the user to log in
+  to mssql server\"\n    echo \"      --mssql-password       the password to log in
+  to mssql server\"\n    echo \"      --mssql-conn-encrypt   whether use encrypt connection\"\n\n
+  \   echo \"      --exporter-host        the listen address of exporter (\\\"127.0.0.1\\\"
+  by default)\"\n    echo \"      --exporter-port        the listen port of exporter
+  (4000 by default)\"\n}\n\nwhile true\ndo\n    case \"$1\" in\n        -h | --help)\n
+  \           print_help\n            shift 1\n            exit 0\n            ;;\n
+  \       --mssql-host)\n            case \"$2\" in\n                \"\")\n                    shift
+  2  \n                    ;;\n                *)\n                    mssql_host=\"$2\"\n
+  \                   shift 2;\n                    ;;\n            esac\n            ;;\n
+  \       --mssql-port)\n            case \"$2\" in\n                \"\")\n                    shift
+  2  \n                    ;;\n                *)\n                    mssql_port=\"$2\"\n
+  \                   shift 2;\n                    ;;\n            esac\n            ;;\n
+  \       --mssql-user)\n            case \"$2\" in\n                \"\")\n                    shift
+  2  \n                    ;;\n                *)\n                    mssql_user=\"$2\"\n
+  \                   shift 2;\n                    ;;\n            esac\n            ;;\n
+  \       --mssql-password)\n            case \"$2\" in\n                \"\")\n                    shift
+  2  \n                    ;;\n                *)\n                    mssql_password=\"$2\"\n
+  \                   shift 2;\n                    ;;\n            esac\n            ;;\n
+  \       --mssql-conn-encrypt)\n            case \"$2\" in\n                \"\")\n
+  \                   shift 2\n                    ;;\n                *)\n                    mssql_conn_encrypt=\"$2\"\n
+  \                   shift 2;\n                    ;;\n            esac\n            ;;\n
+  \       --exporter-host)\n            case \"$2\" in\n                \"\")\n                    shift
+  2  \n                    ;;\n                *)\n                    exporter_host=\"$2\"\n
+  \                   shift 2;\n                    ;;\n            esac\n            ;;\n
+  \       --exporter-port)\n            case \"$2\" in\n                \"\")\n                    shift
+  2  \n                    ;;\n                *)\n                    exporter_port=\"$2\"\n
+  \                   shift 2;\n                    ;;\n            esac\n            ;;\n
+  \       --)\n            shift\n            break\n            ;;\n        *)\n
+  \           echo \"Error: argument \\\"$1\\\" is invalid\" >&2\n            echo
+  \"\"\n            print_help\n            exit 1\n            ;;\n    esac\ndone\n\nEASYOPS_COLLECTOR_mssql_server=$mssql_host\nEASYOPS_COLLECTOR_mssql_port=$mssql_port\nEASYOPS_COLLECTOR_mssql_username=$mssql_user\nEASYOPS_COLLECTOR_mssql_password=$mssql_password\nEASYOPS_COLLECTOR_mssql_conn_encrypt=$mssql_conn_encrypt\n\nEASYOPS_COLLECTOR_exporter_host=$exporter_host\nEASYOPS_COLLECTOR_exporter_port=$exporter_port\n\nexport
+  ENCRYPT=$mssql_conn_encrypt\nexport SERVER=$mssql_host\nexport PORT=$mssql_port\nexport
+  USERNAME=$mssql_user\nexport PASSWORD=$mssql_password\nexport EXPOSE=$exporter_port\n\ncd
+  src && nohup node index.js &\n"
+start_script_type: shell
+user_pre_check_script: ""
+user_pre_check_script_type: shell
+user_check_script: ""
+user_check_script_type: shell
+stop_script: |-
+  #!/bin/bash
+
+  ps -ef | grep node | grep mssql_collector_plugin | awk \'{print $2}\' | xargs kill -9
+stop_script_type: shell
+monitor_script: ""
+user: root
+user_defined_global_variables: []
+baseImageId: ""
+restart_script: ""
+install_prescript: ""
+install_postscript: ""
+update_prescript: ""
+update_postscript: ""
+rollback_prescript: ""
+rollback_postscript: ""
+resolve_script: ""
+uninstall_prescript: ""
+uninstall_postscript: ""
+templates: []
+...
