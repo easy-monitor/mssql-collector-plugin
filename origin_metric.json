@@ -5,7 +5,6 @@
         "help":"Number of lock requests per second that resulted in a deadlock since last restart",
         "key":"mssql_deadlocks",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_deadlocks"
     },
     {
         "agentType":"prometheus",
@@ -13,7 +12,6 @@
         "help":"Number of kill connection errors/sec since last restart",
         "key":"mssql_kill_connection_errors",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_kill_connection_errors"
     },
     {
         "agentType":"prometheus",
@@ -21,7 +19,6 @@
         "help":"UP Status",
         "key":"up",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_up"
     },
     {
         "agentType":"prometheus",
@@ -29,7 +26,6 @@
         "help":"Number of user errors/sec since last restart",
         "key":"mssql_user_errors",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_user_errors"
     },
     {
         "agentType":"prometheus",
@@ -37,7 +33,6 @@
         "help":"Total number of times the transaction log for the database has been expanded last restart",
         "key":"mssql_log_growths",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_log_growths",
         "paramDefine":[
             {
                 "default":"tempdb",
@@ -60,7 +55,6 @@
         "help":"Indicates the minimum number of seconds a page will stay in the buffer pool on this node without references. The traditional advice from Microsoft used to be that the PLE should remain above 300 seconds",
         "key":"mssql_page_life_expectancy",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_page_life_expectancy"
     },
     {
         "agentType":"prometheus",
@@ -68,7 +62,6 @@
         "help":"Available physical memory in KB",
         "key":"mssql_available_physical_memory_kb",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_available_physical_memory_kb"
     },
     {
         "agentType":"prometheus",
@@ -76,7 +69,6 @@
         "help":"Number of page faults since last restart",
         "key":"mssql_page_fault_count",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_page_fault_count"
     },
     {
         "agentType":"prometheus",
@@ -84,7 +76,6 @@
         "help":"Wait time (ms) of stall since last restart",
         "key":"mssql_io_stall_total",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_io_stall_total",
         "paramDefine":[
             {
                 "default":"master",
@@ -107,7 +98,6 @@
         "help":"Wait time (ms) of stall since last restart",
         "key":"mssql_io_stall",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_io_stall",
         "paramDefine":[
             {
                 "default":"master",
@@ -141,7 +131,6 @@
         "help":"Number of Transact-SQL command batches received per second. This statistic is affected by all constraints (such as I/O, number of users, cachesize, complexity of requests, and so on). High batch requests mean good throughput",
         "key":"mssql_batch_requests",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_batch_requests"
     },
     {
         "agentType":"prometheus",
@@ -149,7 +138,6 @@
         "help":"Available page file in KB",
         "key":"mssql_available_page_file_kb",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_available_page_file_kb"
     },
     {
         "agentType":"prometheus",
@@ -157,7 +145,6 @@
         "help":"Total physical memory in KB",
         "key":"mssql_total_physical_memory_kb",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_total_physical_memory_kb"
     },
     {
         "agentType":"prometheus",
@@ -165,7 +152,6 @@
         "help":"Total page file in KB",
         "key":"mssql_total_page_file_kb",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_total_page_file_kb"
     },
     {
         "agentType":"prometheus",
@@ -173,7 +159,6 @@
         "help":"Number of active connections",
         "key":"mssql_connections",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_connections",
         "paramDefine":[
             {
                 "default":"master",
@@ -207,7 +192,6 @@
         "help":"Percentage of memory utilization",
         "key":"mssql_memory_utilization_percentage",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_memory_utilization_percentage"
     },
     {
         "agentType":"prometheus",
@@ -215,6 +199,5 @@
         "help":"Number of seconds since epoch on local instance",
         "key":"mssql_instance_local_time",
         "metricType":"gauge",
-        "name":"mssql_collector_plugin_mssql_instance_local_time"
     }
 ]
