@@ -4,28 +4,28 @@
         "dataType":"double",
         "help":"Number of lock requests per second that resulted in a deadlock since last restart",
         "key":"mssql_deadlocks",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
         "dataType":"double",
         "help":"Number of kill connection errors/sec since last restart",
         "key":"mssql_kill_connection_errors",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
         "dataType":"double",
         "help":"UP Status",
         "key":"up",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
         "dataType":"double",
         "help":"Number of user errors/sec since last restart",
         "key":"mssql_user_errors",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
@@ -54,21 +54,21 @@
         "dataType":"double",
         "help":"Indicates the minimum number of seconds a page will stay in the buffer pool on this node without references. The traditional advice from Microsoft used to be that the PLE should remain above 300 seconds",
         "key":"mssql_page_life_expectancy",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
         "dataType":"double",
         "help":"Available physical memory in KB",
         "key":"mssql_available_physical_memory_kb",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
         "dataType":"double",
         "help":"Number of page faults since last restart",
         "key":"mssql_page_fault_count",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
@@ -130,28 +130,28 @@
         "dataType":"double",
         "help":"Number of Transact-SQL command batches received per second. This statistic is affected by all constraints (such as I/O, number of users, cachesize, complexity of requests, and so on). High batch requests mean good throughput",
         "key":"mssql_batch_requests",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
         "dataType":"double",
         "help":"Available page file in KB",
         "key":"mssql_available_page_file_kb",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
         "dataType":"double",
         "help":"Total physical memory in KB",
         "key":"mssql_total_physical_memory_kb",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
         "dataType":"double",
         "help":"Total page file in KB",
         "key":"mssql_total_page_file_kb",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
@@ -191,13 +191,13 @@
         "dataType":"double",
         "help":"Percentage of memory utilization",
         "key":"mssql_memory_utilization_percentage",
-        "metricType":"gauge",
+        "metricType":"gauge"
     },
     {
         "agentType":"prometheus",
         "dataType":"double",
         "help":"Number of seconds since epoch on local instance",
         "key":"mssql_instance_local_time",
-        "metricType":"gauge",
+        "metricType":"gauge"
     }
 ]
