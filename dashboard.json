@@ -1,1 +1,130 @@
-[{"namespace":"resource_monitor._SQLSERVER_INSTANCE","_object_id":"_DASHBOARD","name":"mssql","panels":[{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_connections\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_connections\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_connections\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"连接数量","width":12,"x":0,"y":16},{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_deadlocks\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_deadlocks\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_deadlocks\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"死锁数量","width":12,"x":12,"y":8},{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_user_errors\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_user_errors\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_user_errors\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"用户错误数量","width":12,"x":0,"y":8},{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_kill_connection_errors\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_kill_connection_errors\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_kill_connection_errors\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"关闭连接错误数量","width":12,"x":12,"y":16},{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_io_stall_total\"],\"xField\":\"time\",\"groupField\":\"database\",\"axis\":{\"yAxis\":{\"min\":0,\"unit\":\"milliseconds\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\",\"database\"],\"measures\":[{\"name\":\"mssql_io_stall_total\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_io_stall_total\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"数据库io等待耗时","width":12,"x":0,"y":24},{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_batch_requests\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_batch_requests\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_batch_requests\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"收到Transact-SQL数量","width":12,"x":12,"y":32},{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_page_fault_count\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_page_fault_count\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_page_fault_count\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"page faults次数","width":12,"x":0,"y":32},{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_total_physical_memory_kb\"],\"xField\":\"time\",\"axis\":{\"yAxis\":{\"min\":0,\"unit\":\"kilobytes\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_total_physical_memory_kb\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_total_physical_memory_kb\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"内存使用","width":12,"x":0,"y":0},{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_available_physical_memory_kb\"],\"xField\":\"time\",\"axis\":{\"yAxis\":{\"min\":0,\"unit\":\"kilobytes\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_available_physical_memory_kb\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_available_physical_memory_kb\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"可用内存","width":12,"x":12,"y":0},{"brickConf":"{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_log_growths\"],\"xField\":\"time\",\"groupField\":\"database\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\",\"database\"],\"measures\":[{\"name\":\"mssql_log_growths\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_log_growths\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"}}]}}","height":8,"id":"chart-v2.time-series-chart","links":"[]","source":"brick","title":"数据库日志增长次数","width":12,"x":12,"y":24}],"variables":[{"id":"instanceId","multiSelect":false,"name":"实例ID","selectorObjectId":"_SQLSERVER_INSTANCE","selectorQuery":"{}","showSelector":true,"type":"cmdb"}]}]
+[
+    {
+        "namespace": "resource-monitor._SQLSERVER_INSTANCE",
+        "_object_id": "_DASHBOARD",
+        "name": "mssql",
+        "panels": [
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_connections\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_connections\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_connections\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "连接数量",
+                "width": 12,
+                "x": 0,
+                "y": 16
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_deadlocks\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_deadlocks\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_deadlocks\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "死锁数量",
+                "width": 12,
+                "x": 12,
+                "y": 8
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_user_errors\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_user_errors\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_user_errors\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "用户错误数量",
+                "width": 12,
+                "x": 0,
+                "y": 8
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_kill_connection_errors\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_kill_connection_errors\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_kill_connection_errors\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "关闭连接错误数量",
+                "width": 12,
+                "x": 12,
+                "y": 16
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_io_stall_total\"],\"xField\":\"time\",\"groupField\":\"database\",\"axis\":{\"yAxis\":{\"min\":0,\"unit\":\"milliseconds\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\",\"database\"],\"measures\":[{\"name\":\"mssql_io_stall_total\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_io_stall_total\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "数据库io等待耗时",
+                "width": 12,
+                "x": 0,
+                "y": 24
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_batch_requests\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_batch_requests\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_batch_requests\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "收到Transact-SQL数量",
+                "width": 12,
+                "x": 12,
+                "y": 32
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_page_fault_count\"],\"xField\":\"time\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_page_fault_count\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_page_fault_count\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "page faults次数",
+                "width": 12,
+                "x": 0,
+                "y": 32
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_total_physical_memory_kb\"],\"xField\":\"time\",\"axis\":{\"yAxis\":{\"min\":0,\"unit\":\"kilobytes\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_total_physical_memory_kb\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_total_physical_memory_kb\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "内存使用",
+                "width": 12,
+                "x": 0,
+                "y": 0
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_available_physical_memory_kb\"],\"xField\":\"time\",\"axis\":{\"yAxis\":{\"min\":0,\"unit\":\"kilobytes\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\"],\"measures\":[{\"name\":\"mssql_available_physical_memory_kb\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_available_physical_memory_kb\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "可用内存",
+                "width": 12,
+                "x": 12,
+                "y": 0
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"yFields\":[\"mssql_log_growths\"],\"xField\":\"time\",\"groupField\":\"database\"},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._SQLSERVER_INSTANCE\",\"dims\":[\"time(1m)\",\"database\"],\"measures\":[{\"name\":\"mssql_log_growths\",\"function\":{\"expression\":\"avg\",\"args\":[\"mssql_log_growths\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "数据库日志增长次数",
+                "width": 12,
+                "x": 12,
+                "y": 24
+            }
+        ],
+        "variables": [
+            {
+                "id": "instanceId",
+                "multiSelect": false,
+                "name": "实例ID",
+                "selectorObjectId": "_SQLSERVER_INSTANCE",
+                "selectorQuery": "{}",
+                "showSelector": true,
+                "type": "cmdb"
+            }
+        ]
+    }
+]
