@@ -146,4 +146,4 @@ export PASSWORD=$mssql_password
 export ENCRYPT=$mssql_conn_encrypt
 export EXPOSE=$exporter_port
 
-node src/index.js 2>&1 | tee -a $LOG_FILE
+./src/node/bin/node src/index.js 2>&1 | tee -a $LOG_FILE
