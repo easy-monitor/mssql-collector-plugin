@@ -1,7 +1,7 @@
 [
     {
-        "namespace": "resource-monitor._SQLSERVER_INSTANCE",
         "_object_id": "_DASHBOARD",
+        "namespace": "resource-monitor._SQLSERVER_INSTANCE",
         "name": "mssql",
         "panels": [
             {
