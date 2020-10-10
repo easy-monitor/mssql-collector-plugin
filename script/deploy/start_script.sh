@@ -2,7 +2,7 @@
 
 
 PACKAGE_NAME=mssql-collector-plugin
-PACKAGE_PATH=$(dirname $(dirname "$(cd `dirname $0`; pwd)"))
+PACKAGE_PATH=$(dirname "$(cd `dirname $0`; pwd)")
 LOG_DIRECTORY=$PACKAGE_PATH/log
 LOG_FILE=$LOG_DIRECTORY/$PACKAGE_NAME.log
 
@@ -137,7 +137,7 @@ message="start exporter"
 echo "[INFO] Message: $message"
 echo "$(date "+%Y-%m-%d %H:%M:%S") [INFO] Message: $message" >> $LOG_FILE
 
-cd $PACKAGE_PATH/script
+cd $PACKAGE_PATH
 
 export SERVER=$mssql_host
 export PORT=$mssql_port
